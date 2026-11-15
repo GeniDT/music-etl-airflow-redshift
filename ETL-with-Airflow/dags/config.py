@@ -1,3 +1,5 @@
+import os
+
 # AWS S3 Bucket Names
 S3_RAW_BUCKET = "music-streaming-data-bucks"
 S3_PROCESSED_BUCKET = "music-streaming-processed-bucks"
@@ -16,4 +18,4 @@ REDSHIFT_CONN_ID = "redshift_conn_id"
 
 # Redshift IAM Role ARN for S3 COPY operations
 # associated with Redshift Serverless workgroup.
-REDSHIFT_COPY_IAM_ROLE = "arn:aws:iam::371439860588:role/RedshiftServerlessCopyRole"
+REDSHIFT_COPY_IAM_ROLE = os.getenv("REDSHIFT_COPY_IAM_ROLE")  # e.g. arn:aws:iam::<AWS_ACCOUNT_ID>:role/RedshiftServerlessCopyRole
